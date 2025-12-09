@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_in.c                                         :+:      :+:    :+:   */
+/*   sa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 14:24:03 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/03 17:19:42 by yamosca-         ###   ########.fr       */
+/*   Created: 2025/11/25 20:38:37 by yamosca-          #+#    #+#             */
+/*   Updated: 2025/11/26 15:37:00 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_is_in(char **input)
+void sa(t_list **stack_a)
 {
-    int i;
-    int n;
+    t_list *first;
+    t_list *second;
+    long tmp;
 
-    i = 1;
-    while (input[i])
-    {
-        n = 0;
-        while (input[i][n])
-        {
-            if (!(input[i][n] >= '0' && input[i][n] <= '9')
-                && (input[i][n] != ' ') && (input[i][n] != '-'))
-                return(0);
-            n++;
-        }
-        i++;
-    }
-    return (1);
+    if (!stack_a || !*stack_a || !(*stack_a)->next)
+        return ;
+
+    first = *stack_a;
+    second = (*stack_a)->next;
+
+    tmp = first->value;
+    first->value = second->value;
+    second->value = tmp;
+    
+    write(1, "sa\n", 3);
 }

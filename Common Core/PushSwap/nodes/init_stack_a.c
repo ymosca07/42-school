@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_in.c                                         :+:      :+:    :+:   */
+/*   init_stack_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 14:24:03 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/03 17:19:42 by yamosca-         ###   ########.fr       */
+/*   Created: 2025/11/27 11:35:51 by yamosca-          #+#    #+#             */
+/*   Updated: 2025/11/27 12:05:27 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_is_in(char **input)
+t_list *init_stack_a(t_list *stack_a, long *stack, int *count)
 {
-    int i;
+    t_list *new_node;
     int n;
 
-    i = 1;
-    while (input[i])
+    n = 0;
+    while (n < (*count))
     {
-        n = 0;
-        while (input[i][n])
-        {
-            if (!(input[i][n] >= '0' && input[i][n] <= '9')
-                && (input[i][n] != ' ') && (input[i][n] != '-'))
-                return(0);
-            n++;
-        }
-        i++;
+        new_node = ft_lstnew(stack[n]);
+        ft_lstadd_back(&stack_a, new_node);
+        n++;
     }
-    return (1);
+    return (stack_a);
 }

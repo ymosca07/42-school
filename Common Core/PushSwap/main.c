@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:45:18 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/11/24 18:01:31 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/06 15:20:36 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,12 @@
 
 int main(int argc, char **argv)
 {
-    int i;
-    int n;
-    t_list *stack_a;
+    t_list *stack_a = NULL;
     int count;
+    long *stack;
+    t_list *stack_b = NULL;
     
     count = 0;
-    i = 0;
-    n = 0;
-    // int et ' '
     if (argc < 2 || ft_is_in(argv) == 0)
     {
         write(2, "error\n", 6);
@@ -31,28 +28,14 @@ int main(int argc, char **argv)
     }
     else
     {
-        char *str = NULL;
-        str = init_split_stack(argv);
-        char **tmp = NULL;
-        tmp = ft_split(str, ' ');
-        while (tmp[count])
-            count++;
-        long *stack = NULL;
-        stack = malloc(sizeof(long) * count);
-        while (tmp[n])
+        stack = parsing(argv, &count);
+        stack_a = init_stack_a(stack_a, stack, &count);
+        ft_push_swap(&stack_a, &stack_b);
+        while (stack_a->next)
         {
-            stack[n] = ft_atol(tmp[n]);
-            n++;
-        }
-        n = 0;
-        while (stack[n])
-        {
-            stack_a = malloc(sizeof(t_list));
-            stack_a->value = stack[n];
-            printf("%ld\n", stack_a->value);
+            printf("%ld est à l'index %d\n", stack_a->value, stack_a->index);
             stack_a = stack_a->next;
-            n++;
         }
+        printf("%ld est à l'index %d\n", stack_a->value, stack_a->index);
     }
-    
 }

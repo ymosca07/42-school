@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_in.c                                         :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 14:24:03 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/03 17:19:42 by yamosca-         ###   ########.fr       */
+/*   Created: 2025/12/03 15:03:10 by yamosca-          #+#    #+#             */
+/*   Updated: 2025/12/03 15:06:14 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_is_in(char **input)
+int ft_lstsize(t_list *lst)
 {
-    int i;
-    int n;
+    t_list *node;
+    int count;
 
-    i = 1;
-    while (input[i])
+    count = 0;
+    node = lst;
+    while (node)
     {
-        n = 0;
-        while (input[i][n])
-        {
-            if (!(input[i][n] >= '0' && input[i][n] <= '9')
-                && (input[i][n] != ' ') && (input[i][n] != '-'))
-                return(0);
-            n++;
-        }
-        i++;
+        count++;
+        node = node->next;
     }
-    return (1);
+    return (count);
 }

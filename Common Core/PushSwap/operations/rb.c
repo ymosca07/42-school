@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_in.c                                         :+:      :+:    :+:   */
+/*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 14:24:03 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/03 17:19:42 by yamosca-         ###   ########.fr       */
+/*   Created: 2025/11/26 17:09:43 by yamosca-          #+#    #+#             */
+/*   Updated: 2025/11/26 17:18:35 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_is_in(char **input)
+void    rb(t_list **stack_b)
 {
-    int i;
-    int n;
-
-    i = 1;
-    while (input[i])
-    {
-        n = 0;
-        while (input[i][n])
-        {
-            if (!(input[i][n] >= '0' && input[i][n] <= '9')
-                && (input[i][n] != ' ') && (input[i][n] != '-'))
-                return(0);
-            n++;
-        }
-        i++;
-    }
-    return (1);
+    t_list *first;
+    t_list *last;
+    
+    if (!stack_b || !*stack_b || !(*stack_b)->next)
+        return ;
+        
+    first = *stack_b;
+    last = *stack_b;
+    
+    while (last->next)
+        last = last->next;
+    last->next = first;
+    *stack_b = first->next;
+    first->next = NULL;
+    write(1, "ra\n", 3);
 }

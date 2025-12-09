@@ -6,16 +6,16 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 18:21:33 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/11/24 16:27:15 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/11/25 17:43:53 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*substring;
-	size_t	i;
+	char *substring;
+	size_t i;
 
 	if (len > (ft_strlen(s) - start))
 		len = ft_strlen(s) - start;

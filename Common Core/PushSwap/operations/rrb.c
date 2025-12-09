@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 20:29:41 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/06 15:19:20 by yamosca-         ###   ########.fr       */
+/*   Created: 2025/11/27 10:56:41 by yamosca-          #+#    #+#             */
+/*   Updated: 2025/11/27 10:57:43 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_push_swap(t_list **stack_a, t_list **stack_b)
+void    rrb(t_list **stack_b)
 {
-    int size;
-
-    size = ft_lstsize(*stack_a);
+    t_list *before_last;
+    t_list *last;
     
-    if (size == 2)
-        sort_2(stack_a);
-    else if (size == 3)
-        sort_3(stack_a);
-    else if (size == 5)
-        sort_5(stack_a, stack_b);
-    else
-        chunk_sort(stack_a, stack_b, size);
-    // free_all(&stack_a);
-    return ;
+    if (!stack_b || !*stack_b || !(*stack_b)->next)
+        return ;
+        
+    last = *stack_b;
+    before_last = *stack_b;
+    while (last->next)
+        last = last->next;
+    while (before_last->next->next)
+        before_last = before_last->next;
+    before_last->next = NULL;
+    last->next = *stack_b;
+    *stack_b = last;
+    write(1, "rrb\n", 4);
 }

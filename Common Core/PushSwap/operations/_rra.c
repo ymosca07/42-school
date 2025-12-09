@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_in.c                                         :+:      :+:    :+:   */
+/*   _rra.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 14:24:03 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/03 17:19:42 by yamosca-         ###   ########.fr       */
+/*   Created: 2025/11/27 11:05:19 by yamosca-          #+#    #+#             */
+/*   Updated: 2025/11/27 11:05:37 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_is_in(char **input)
+void    _rra(t_list **stack_a)
 {
-    int i;
-    int n;
-
-    i = 1;
-    while (input[i])
-    {
-        n = 0;
-        while (input[i][n])
-        {
-            if (!(input[i][n] >= '0' && input[i][n] <= '9')
-                && (input[i][n] != ' ') && (input[i][n] != '-'))
-                return(0);
-            n++;
-        }
-        i++;
-    }
-    return (1);
+    t_list *before_last;
+    t_list *last;
+    
+    if (!*stack_a || !(*stack_a)->next)
+        return ;
+        
+    last = *stack_a;
+    before_last = *stack_a;
+    while (last->next)
+        last = last->next;
+    while (before_last->next->next)
+        before_last = before_last->next;
+    before_last->next = NULL;
+    last->next = *stack_a;
+    *stack_a = last;
 }
