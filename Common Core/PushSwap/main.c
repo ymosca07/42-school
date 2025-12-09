@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:45:18 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/06 15:20:36 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/09 17:32:11 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ int main(int argc, char **argv)
         stack = parsing(argv, &count);
         stack_a = init_stack_a(stack_a, stack, &count);
         ft_push_swap(&stack_a, &stack_b);
-        while (stack_a->next)
-        {
-            printf("%ld est à l'index %d\n", stack_a->value, stack_a->index);
-            stack_a = stack_a->next;
-        }
-        printf("%ld est à l'index %d\n", stack_a->value, stack_a->index);
+        // while (stack_a->next)
+        // {
+        //     printf("%ld est à l'index %d\n", stack_a->value, stack_a->index);
+        //     stack_a = stack_a->next;
+        // }
+        // printf("%ld est à l'index %d\n", stack_a->value, stack_a->index);
     }
 }

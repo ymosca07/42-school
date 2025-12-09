@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 13:27:16 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/06 18:07:33 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/09 16:59:40 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void append_all_index(t_list **stack_a, int size)
     int i;
 
     tab = malloc(sizeof(int) * size);
-    tmp = (*stack_a);
+    tmp = *stack_a;
     i = 0;
     while (tmp)
     {
@@ -67,26 +67,22 @@ void B_to_A(t_list **stack_a, t_list **stack_b, int size)
     int i;
     
     i = 0;
-    cursor = *stack_b;
     while(*stack_b)
     {
         i = 0;
-        while (cursor->index != size)
+        cursor = *stack_b;
+        while (cursor->index != size - 1)
         {
-            if (cursor->index == size)
-            {
-                while (i--)
-                    rb(stack_b);
-                pa(stack_a, stack_b);
-            }
-            i++;
             cursor = cursor->next;
+            i++;
         }
+        while (i--)
+            rb(stack_b);
+        pa(stack_a, stack_b);
         size--;
     }
 }
 
-#include <stdio.h>
 void chunk_sort(t_list **stack_a, t_list **stack_b, int size)
 {
     int len;
@@ -96,12 +92,6 @@ void chunk_sort(t_list **stack_a, t_list **stack_b, int size)
     append_all_index(stack_a, size);
     
     A_to_B(stack_a, stack_b, len);
-
-    while (*stack_b)
-    {
-        printf("Value : %ld Index : %d\n", (*stack_b)->value, (*stack_b)->index);
-        *stack_b = (*stack_b)->next;
-    }
 
     B_to_A(stack_a, stack_b, size);
     

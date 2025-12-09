@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_in.c                                         :+:      :+:    :+:   */
+/*   ft_is_double.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 14:24:03 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/09 18:35:49 by yamosca-         ###   ########.fr       */
+/*   Created: 2025/12/09 18:43:43 by yamosca-          #+#    #+#             */
+/*   Updated: 2025/12/09 19:03:05 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_is_in(char **input)
+void    ft_is_double(char **tmp)
 {
     int i;
     int n;
+    int j;
+    char *stock;
+    int count;
 
-    i = 1;
-    while (input[i])
+    count = 0;
+    i = 0;
+    n = 0;
+    j = 0;
+    while (tmp[i])
     {
-        n = 0;
-        while (input[i][n])
+        while (tmp[i][n])
+            stock[j++] = tmp[i][n];
+        while (tmp[i])
         {
-            if (!(input[i][n] >= '0' && input[i][n] <= '9')
-                && (input[i][n] != ' ') && (input[i][n] != '+')
-                && (input[i][n] != '-'))
-                return(0);
-            n++;
+            if (ft_strcmp(stock[j], tmp[i]) == 0)
+                count++;
+            if (count
         }
-        i++;
+        i = 0;
     }
-    return (1);
 }
