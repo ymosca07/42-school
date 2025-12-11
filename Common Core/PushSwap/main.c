@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:45:18 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/09 17:32:11 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/10 15:47:48 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
     count = 0;
     if (argc < 2 || ft_is_in(argv) == 0)
     {
-        write(2, "error\n", 6);
+        write(2, "Error\n", 6);
         return (1);
     }
     else

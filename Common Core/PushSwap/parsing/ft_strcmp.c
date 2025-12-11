@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_double.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 18:43:43 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/09 19:03:05 by yamosca-         ###   ########.fr       */
+/*   Created: 2025/12/10 17:35:36 by yamosca-          #+#    #+#             */
+/*   Updated: 2025/12/10 17:35:45 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_is_double(char **tmp)
+int	ft_strcmp(char *s1, char *s2)
 {
-    int i;
-    int n;
-    int j;
-    char *stock;
-    int count;
+	int	i;
 
-    count = 0;
-    i = 0;
-    n = 0;
-    j = 0;
-    while (tmp[i])
-    {
-        while (tmp[i][n])
-            stock[j++] = tmp[i][n];
-        while (tmp[i])
-        {
-            if (ft_strcmp(stock[j], tmp[i]) == 0)
-                count++;
-            if (count
-        }
-        i = 0;
-    }
+	i = 0;
+	while (s1[i] != '\0' || s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
 }

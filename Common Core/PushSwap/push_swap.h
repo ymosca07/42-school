@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:16:59 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/06 18:00:00 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 16:18:10 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <unistd.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <limits.h>
 
 typedef struct s_list
 {
@@ -70,5 +71,13 @@ void	ft_sort_int_tab(int *tab, int size);
 void	ft_swap(int *a, int *b);
 void    A_to_B(t_list **stack_a, t_list **stack_b, int len);
 void B_to_A(t_list **stack_a, t_list **stack_b, int size);
+void    verif_double(long *stack, int count, int *error);
+void    last_verif(long *stack, int *count);
+void    verif_max_min(long *stack, int count, int *error);
+void    error_signal();
+void    verif_signs(char **tmp);
+void    pos_sign_more(char *tmp);
+void    pos_sign_less(char *tmp);
+int	ft_strcmp(char *s1, char *s2);
 
 #endif

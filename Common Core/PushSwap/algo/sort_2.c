@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 15:13:15 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/03 15:19:02 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/10 16:02:42 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ void sort_2(t_list **stack_a)
     second = (*stack_a)->next;
     if (first->value > second->value)
         sa(stack_a);
-    exit(0);
+    return ;
 }

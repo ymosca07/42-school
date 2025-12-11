@@ -42,7 +42,10 @@ SRCS = main.c \
 	   algo/search_min_max.c \
 	   nodes/ft_lstsize.c \
 	   algo/chunk_sort.c \
-	   algo/utils_chunk.c
+	   algo/utils_chunk.c \
+	   parsing/last_verif.c \
+	   parsing/verif_signs.c \
+	   parsing/ft_strcmp.c
 	   
 OBJS = $(SRCS:.c=.o)
 
