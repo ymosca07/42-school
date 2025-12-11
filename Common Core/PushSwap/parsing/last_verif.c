@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:00:08 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 16:19:54 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 18:01:57 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,20 @@ void    verif_double(long *stack, int count, int *error)
 {
     int n;
     int i;
+    int comp;
 
+    comp = 0;
     i = 0;
     n = 0;
     while (i < count)
     {
         n = 0;
-        count = 0;
+        comp = 0;
         while(n < count)
         {
             if (stack[i] == stack[n])
-                count++;
-            if (count > 1)
+                comp++;
+            if (comp > 1)
                 *error = -1;
             n++;
         }

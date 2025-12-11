@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verif_signs.c                                      :+:      :+:    :+:   */
+/*   signs_and_long_max.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 16:23:56 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/10 17:58:37 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 19:01:59 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    pos_sign_more(char *tmp)
+static void    pos_sign_more(char *tmp)
 {
     int i;
     
@@ -26,15 +26,12 @@ void    pos_sign_more(char *tmp)
             exit(1);
         }
         if (tmp[i] == '+' && ft_strlen(tmp) == 1)
-        {
-            write(2, "Error\n", 6);
-            exit(1);
-        }
+            error_signal();
         i++;
     }
 }
 
-void    pos_sign_less(char *tmp)
+static void    pos_sign_less(char *tmp)
 {
     int i;
     
@@ -49,15 +46,12 @@ void    pos_sign_less(char *tmp)
             exit(1);
         }
         if (tmp[i] == '-' && ft_strlen(tmp) == 1)
-        {
-            write(2, "Error\n", 6);
-            exit(1);
-        }
+            error_signal();
         i++;
     }
 }
 
-void    verif_signs(char **tmp)
+static void    verif_signs(char **tmp)
 {
     int n;
     int i;
@@ -76,6 +70,19 @@ void    verif_signs(char **tmp)
             n++;
         }
         i++;
-
     }
+}
+
+void long_max_signs(char **tmp)
+{
+    int n;
+
+    n = 0;
+    while (tmp[n])
+    {
+        if (ft_strlen(tmp[n]) > 12)
+            error_signal();
+        n++;
+    }
+    verif_signs(tmp);
 }

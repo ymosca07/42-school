@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 13:27:16 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 15:52:05 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 16:50:24 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,20 @@ void    A_to_B(t_list **stack_a, t_list **stack_b, int len)
     }
 }
 
+void search_index_optimization(t_list **stack_b, int size_b, int target_index, int i)
+{
+    if (i <= size_b / 2)
+    {
+        while ((*stack_b)->index != target_index)
+            rb(stack_b);
+    }
+    else
+    {
+        while ((*stack_b)->index != target_index)
+            rrb(stack_b);
+    }
+}
+
 void B_to_A(t_list **stack_a, t_list **stack_b, int size)
 {
     t_list *cursor;
@@ -81,16 +95,7 @@ void B_to_A(t_list **stack_a, t_list **stack_b, int size)
             i++;
             cursor = cursor->next;
         }
-        if (i <= size_b / 2)
-        {
-            while ((*stack_b)->index != target_index)
-                rb(stack_b);
-        }
-        else
-        {
-            while ((*stack_b)->index != target_index)
-                rrb(stack_b);
-        }
+        search_index_optimization(stack_b, size_b, target_index, i);
         pa(stack_a, stack_b);
         target_index--;
     }

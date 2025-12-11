@@ -6,13 +6,13 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:50:14 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/04 16:25:10 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 17:51:08 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    push_min(t_list **stack_a, t_list **stack_b, long min)
+void    push_min(t_list **stack_a, t_list **stack_b, long min, int min_position)
 {
     t_list *node;
 
@@ -24,8 +24,16 @@ void    push_min(t_list **stack_a, t_list **stack_b, long min)
     }
     if (node && node->value == min)
     {
-        while (((*stack_a)->value) != node->value)
-            ra(stack_a);
+        if (min_position <= 2)
+        {
+            while (((*stack_a)->value) != node->value)
+                ra(stack_a);
+        }
+        else if (min_position > 2)
+        {
+            while (((*stack_a)->value) != node->value)
+                rra(stack_a);
+        }
         pb(stack_a, stack_b);
         return ;
     }

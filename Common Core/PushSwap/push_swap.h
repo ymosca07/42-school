@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:16:59 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 16:18:10 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 19:03:53 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ void sort_2(t_list **stack_a);
 void sort_3(t_list **stack_a);
 void sort_5(t_list **stack_a, t_list **stack_b);
 int ft_lstsize(t_list *lst);
-void    push_max(t_list **stack_a, t_list **stack_b, long max);
-void    push_min(t_list **stack_a, t_list **stack_b, long min);
+void    push_max(t_list **stack_a, t_list **stack_b, long max, int max_position);
+void    push_min(t_list **stack_a, t_list **stack_b, long min, int min_position);
 void    search_min_max(t_list **stack_a, t_list **stack_b);
 void chunk_sort(t_list **stack_a, t_list **stack_b, int size);
 int chunk_size(int size);
@@ -75,9 +75,9 @@ void    verif_double(long *stack, int count, int *error);
 void    last_verif(long *stack, int *count);
 void    verif_max_min(long *stack, int count, int *error);
 void    error_signal();
-void    verif_signs(char **tmp);
-void    pos_sign_more(char *tmp);
-void    pos_sign_less(char *tmp);
 int	ft_strcmp(char *s1, char *s2);
+void ft_lstclear(t_list *node);
+void    check_empty_string(char **argv);
+void long_max_signs(char **tmp);
 
 #endif

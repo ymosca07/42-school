@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:20:35 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 16:16:37 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 19:03:38 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ long *parsing(char **argv, int *count)
     int n;
 
     n = 0;
+    check_empty_string(argv);
     str = init_split_stack(argv);
     tmp = ft_split(str, ' ');
     free(str);
-    verif_signs(tmp);
+    long_max_signs(tmp);
     while (tmp[*count])
         (*count)++;
     stack = malloc(sizeof(long) * (*count));
@@ -35,6 +36,7 @@ long *parsing(char **argv, int *count)
         free(tmp[n]);
         n++;
     }
+    free(tmp);
     last_verif(stack, count);
     return (stack);
 }
