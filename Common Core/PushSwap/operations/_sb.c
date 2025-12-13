@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   _sb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 11:08:50 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/11/27 11:09:02 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:23:11 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void _sb(t_list **stack_b)
 {

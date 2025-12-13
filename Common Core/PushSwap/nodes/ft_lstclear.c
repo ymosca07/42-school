@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 16:40:38 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 16:42:20 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:21:49 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void ft_lstclear(t_list *node)
 {

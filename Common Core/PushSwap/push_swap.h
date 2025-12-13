@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:16:59 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 19:03:53 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/13 01:33:49 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,6 @@ int	ft_strcmp(char *s1, char *s2);
 void ft_lstclear(t_list *node);
 void    check_empty_string(char **argv);
 void long_max_signs(char **tmp);
+size_t	ft_strlen_skip(const char *str);
 
 #endif

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 15:56:18 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/06 17:12:30 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:22:39 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "../push_swap.h"
 
 void sort_5(t_list **stack_a, t_list **stack_b)
 {

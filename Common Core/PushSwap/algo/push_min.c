@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_min.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:50:14 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 17:51:08 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:22:21 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void    push_min(t_list **stack_a, t_list **stack_b, long min, int min_position)
 {

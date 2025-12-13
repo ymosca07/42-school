@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   _rb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 11:07:42 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/11/27 11:07:54 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:22:57 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void    _rb(t_list **stack_b)
 {

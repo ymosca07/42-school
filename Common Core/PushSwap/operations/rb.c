@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 17:09:43 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/11/26 17:18:35 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/13 01:21:41 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void    rb(t_list **stack_b)
 {
@@ -28,5 +28,5 @@ void    rb(t_list **stack_b)
     last->next = first;
     *stack_b = first->next;
     first->next = NULL;
-    write(1, "ra\n", 3);
+    write(1, "rb\n", 3);
 }

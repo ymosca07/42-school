@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_empty_string.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 18:04:00 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 19:17:59 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:24:05 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void    check_empty_string(char **argv)
 {

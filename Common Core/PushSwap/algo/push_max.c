@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_max.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:50:09 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 17:52:06 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:22:18 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void    push_max(t_list **stack_a, t_list **stack_b, long max, int max_position)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:45:18 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 19:46:13 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/13 01:24:07 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ int main(int argc, char **argv)
         stack_a = init_stack_a(stack_a, stack, &count);
         free(stack);
         ft_push_swap(&stack_a, &stack_b);
-        // ft_lstclear(stack_a);
+        ft_lstclear(stack_a);
     }
     
-    #include <stdio.h>
-    while (stack_a)
-    {
-        dprintf(2, "%ld\n", stack_a->value);
-        stack_a = stack_a->next;
-    }
+    // #include <stdio.h>
+    // while (stack_a)
+    // {
+    //     dprintf(2, "%ld\n", stack_a->value);
+    //     stack_a = stack_a->next;
+    // }
     
     return (0);
 }

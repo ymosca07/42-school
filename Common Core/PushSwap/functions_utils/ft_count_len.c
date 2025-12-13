@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_count_len.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:17:30 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/11/24 17:24:12 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:22:03 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int ft_count_len(char **input)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   pb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 15:52:05 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/04 16:46:14 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:23:16 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void    pb(t_list **stack_a, t_list **stack_b)
 {

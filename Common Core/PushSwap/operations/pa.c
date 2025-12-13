@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 15:46:32 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/04 16:47:25 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:23:14 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void    pa(t_list **stack_a, t_list **stack_b)
 {

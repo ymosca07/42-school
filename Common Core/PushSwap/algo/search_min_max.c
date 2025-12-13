@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   search_min_max.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:07:13 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 17:29:56 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:22:24 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void append_index(t_list **stack_a)
 {

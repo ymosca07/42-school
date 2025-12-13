@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils_chunk.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 16:03:29 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/06 17:05:09 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:22:45 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_swap(int *a, int *b)
 {

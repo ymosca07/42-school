@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   chunk_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 13:27:16 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 16:50:24 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:27:21 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void append_all_index(t_list **stack_a, int size)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 15:50:00 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 17:38:01 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:22:30 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void    second_option_3(t_list **stack_a)
 {

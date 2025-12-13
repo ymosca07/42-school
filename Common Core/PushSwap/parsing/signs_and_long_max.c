@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   signs_and_long_max.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 16:23:56 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 19:01:59 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/13 01:43:05 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void    pos_sign_more(char *tmp)
 {
@@ -78,11 +78,11 @@ void long_max_signs(char **tmp)
     int n;
 
     n = 0;
+    verif_signs(tmp);
     while (tmp[n])
     {
-        if (ft_strlen(tmp[n]) > 12)
+        if (ft_strlen_skip(tmp[n]) > 12)
             error_signal();
         n++;
     }
-    verif_signs(tmp);
 }

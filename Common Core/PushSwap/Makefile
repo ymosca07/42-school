@@ -47,7 +47,8 @@ SRCS = main.c \
 	   parsing/signs_and_long_max.c \
 	   parsing/ft_strcmp.c \
 	   nodes/ft_lstclear.c \
-	   parsing/check_empty_string.c
+	   parsing/check_empty_string.c \
+	   functions_utils/ft_strlen_skip.c
 	   
 OBJS = $(SRCS:.c=.o)
 

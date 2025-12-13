@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlen_skip.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/10 17:35:36 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 21:24:11 by ymosca--         ###   ########.fr       */
+/*   Created: 2025/12/13 01:29:06 by ymosca--          #+#    #+#             */
+/*   Updated: 2025/12/13 01:53:22 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_strcmp(char *s1, char *s2)
+size_t	ft_strlen_skip(const char *str)
 {
-	int	i;
+	size_t	i;
+    size_t count;
 
+    count = 0;
 	i = 0;
-	while (s1[i] != '\0' || s2[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+    if (str[0] == '+' || str[0] == '-')
+    {
+        i++;
+        count++;
+    }
+    
+    while (str[i] == '0')
+    {    
+        i++;
+    }
+    
+	while (str[i])
+    {
 		i++;
-	}
-	return (0);
+        count++;
+    }
+	return (count);
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   last_verif.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:00:08 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 18:01:57 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:24:17 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void    error_signal()
 {

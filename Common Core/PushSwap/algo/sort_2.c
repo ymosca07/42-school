@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 15:13:15 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/10 16:02:42 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/11 21:22:27 by ymosca--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void sort_2(t_list **stack_a)
 {
