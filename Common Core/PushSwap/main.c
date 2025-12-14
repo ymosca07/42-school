@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:45:18 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/13 17:20:30 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/14 17:11:26 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,12 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (1);
 	if (argc < 2 || ft_is_in(argv) == 0)
-	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
+		error_signal();
 	else
 	{
 		stack = parsing(argv, &count);
+		if (!stack)
+			error_signal();
 		stack_a = init_stack_a(stack_a, stack, &count);
 		free(stack);
 		ft_push_swap(&stack_a, &stack_b);

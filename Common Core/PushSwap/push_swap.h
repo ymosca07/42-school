@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:16:59 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/14 14:37:21 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/14 17:55:39 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,7 @@ void				sort_2(t_list **stack_a);
 void				sort_3(t_list **stack_a);
 void				sort_5(t_list **stack_a, t_list **stack_b);
 int					ft_lstsize(t_list *lst);
-void				push_max(t_list **stack_a, t_list **stack_b, long max,
-						int max_position);
-void				push_min(t_list **stack_a, t_list **stack_b, long min,
-						int min_position);
-void				search_min_max(t_list **stack_a, t_list **stack_b);
+void				push_min(t_list **stack_a, t_list **stack_b);
 void				chunk_sort(t_list **stack_a, t_list **stack_b, int size);
 int					chunk_size(int size);
 void				ft_sort_int_tab(int *tab, int size);
@@ -75,5 +71,6 @@ void				check_empty_string(char **argv);
 void				verif_signs(char **tmp);
 int					ft_count_len(char **input);
 void				tmp_error(char **tmp);
+int					is_sorted(t_list **stack_a);
 
 #endif

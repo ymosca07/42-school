@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:20:35 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/14 14:44:34 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/14 17:10:50 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,14 @@ long	*parsing(char **argv, int *count)
 	str = init_split_stack(argv);
 	tmp = ft_split(str, ' ');
 	free(str);
+	if (!tmp)
+		tmp_error(tmp);
 	verif_signs(tmp);
 	while (tmp[*count])
 		(*count)++;
 	stack = malloc(sizeof(long) * (*count));
 	if (!stack)
-		return (NULL);
+		tmp_error(tmp);
 	stack = get_long_tab(tmp, stack);
 	free(tmp);
 	last_verif(stack, count);

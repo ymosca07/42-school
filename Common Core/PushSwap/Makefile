@@ -37,9 +37,7 @@ SRCS = main.c \
 	   algo/sort_2.c \
 	   algo/sort_3.c \
 	   algo/sort_5.c \
-	   algo/push_max.c \
 	   algo/push_min.c \
-	   algo/search_min_max.c \
 	   nodes/ft_lstsize.c \
 	   algo/chunk_sort.c \
 	   algo/utils_chunk.c \
@@ -47,7 +45,8 @@ SRCS = main.c \
 	   parsing/signs.c \
 	   parsing/ft_strcmp.c \
 	   nodes/ft_lstclear.c \
-	   parsing/check_empty_string.c
+	   parsing/check_empty_string.c \
+	   parsing/is_sorted.c
 	   
 OBJS = $(SRCS:.c=.o)
 

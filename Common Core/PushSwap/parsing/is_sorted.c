@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stack_a.c                                     :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 11:35:51 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/14 17:13:41 by yamosca-         ###   ########.fr       */
+/*   Created: 2025/12/14 16:37:59 by yamosca-          #+#    #+#             */
+/*   Updated: 2025/12/14 16:55:02 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_list	*init_stack_a(t_list *stack_a, long *stack, int *count)
+int	is_sorted(t_list **stack_a)
 {
-	t_list	*new_node;
-	int		n;
+	t_list	*node;
+	t_list	*more;
 
-	n = 0;
-	while (n < (*count))
+	node = *stack_a;
+	more = (*stack_a)->next;
+	while (more)
 	{
-		new_node = ft_lstnew(stack[n]);
-		if (!new_node)
-		{
-			ft_lstclear(stack_a);
-			free(stack);
-			error_signal();
-		}
-		ft_lstadd_back(&stack_a, new_node);
-		n++;
+		if (node->value > more->value)
+			return (0);
+		node = node->next;
+		more = more->next;
 	}
-	return (stack_a);
+	ft_lstclear(*stack_a);
+	return (1);
 }
