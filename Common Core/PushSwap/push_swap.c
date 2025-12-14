@@ -12,20 +12,18 @@
 
 #include "push_swap.h"
 
-void    ft_push_swap(t_list **stack_a, t_list **stack_b)
+void	ft_push_swap(t_list **stack_a, t_list **stack_b)
 {
-    int size;
+	int	size;
 
-    size = ft_lstsize(*stack_a);
-    
-    if (size == 2)
-        sort_2(stack_a);
-    else if (size == 3)
-        sort_3(stack_a);
-    else if (size == 5)
-        sort_5(stack_a, stack_b);
-    else
-        chunk_sort(stack_a, stack_b, size);
-
-    return ;
+	size = ft_lstsize(*stack_a);
+	if (size == 2)
+		sort_2(stack_a);
+	else if (size == 3)
+		sort_3(stack_a);
+	else if (size == 5)
+		sort_5(stack_a, stack_b);
+	else
+		chunk_sort(stack_a, stack_b, size);
+	return ;
 }

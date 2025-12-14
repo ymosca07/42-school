@@ -12,29 +12,29 @@
 
 #include "../push_swap.h"
 
-void    check_empty_string(char **argv)
+void	check_empty_string(char **argv)
 {
-    int n;
-    int signal;
-    int i;
+	int	n;
+	int	signal;
+	int	i;
 
-    n = 1;
-    while (argv[n])
-    {
-        if (!argv[n][0])
-            error_signal();
-        i = 0;
-        signal = 0;
-        while (argv[n][i])
-        {
-            if (argv[n][i] >= '0' && argv[n][i] <= '9')
-                signal = 1;
-            if (signal == 1)
-                break ;
-            i++;
-            if (argv[n][i] == '\0')
-                error_signal();
-        }
-        n++;
-    }
+	n = 1;
+	while (argv[n])
+	{
+		if (!argv[n][0])
+			error_signal();
+		i = 0;
+		signal = 0;
+		while (argv[n][i])
+		{
+			if (argv[n][i] >= '0' && argv[n][i] <= '9')
+				signal = 1;
+			if (signal == 1)
+				break ;
+			i++;
+			if (argv[n][i] == '\0')
+				error_signal();
+		}
+		n++;
+	}
 }

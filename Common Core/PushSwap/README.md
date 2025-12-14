@@ -1,32 +1,77 @@
-*This project has been created as part of the 42 curriculum by yamosca-.*
+This project has been created as part of the 42 curriculum by yamosca-.
 
-# Push Swap
+Push_swap
 
-## Description
+Description
 
-**Push Swap** is a sorting algorithm project at 42 School. The goal is to sort a stack of integers (Stack A) using a second empty stack (Stack B) and a limited set of instructions, with the lowest possible number of operations.
+Push_swap is an algorithmic project that challenges you to sort a stack of integers using a second empty stack and a specific set of instructions (push, swap, rotate, reverse rotate).
 
-The project involves complex algorithm optimization, stack manipulation, and rigorous memory management in C.
+The primary goal is to sort the data with the lowest possible number of operations. This project focuses on:
 
-### The Rules
-- You have two stacks named **A** and **B**.
-- At the beginning, **A** contains a random amount of negative and/or positive numbers which cannot be duplicated. **B** is empty.
-- The goal is to sort numbers in ascending order into stack **A**.
-- The available operations are:
-  - `sa`, `sb`, `ss`: Swap the first 2 elements of a stack.
-  - `pa`, `pb`: Push the top element of one stack to the other.
-  - `ra`, `rb`, `rr`: Rotate up (first element becomes last).
-  - `rra`, `rrb`, `rrr`: Reverse rotate (last element becomes first).
+Algorithmic complexity (aiming for optimized performance).
 
-## Instructions
+Rigorous stack manipulation.
 
-### Compilation
-The project uses a `Makefile` to compile the source files.
+Low-level C programming and memory management.
 
-```bash
-# Clone the repository
-git clone <repository_url>
-cd push_swap
+My implementation uses a Chunk Sort strategy combined with a greedy algorithm for the return phase, optimized to handle 100 and 500 random numbers efficiently.
 
-# Compile the executable
+Instructions
+
+Compilation
+
+Clone the repository and compile the executable using the Makefile:
+
 make
+
+
+Execution
+
+Run the program by passing a list of integers as arguments. The program will output the operations required to sort the stack.
+
+./push_swap 2 1 3 6 5 8
+
+
+Example Output:
+
+sa
+pb
+pbhis project has been created as part of the 42 curriculum by yamosca-.
+Push_s
+pb
+sa
+pa
+pa
+pa
+
+
+Error Handling
+
+The program handles various error cases (non-integer arguments, values greater than INT_MAX, duplicates). In case of an error, it outputs:
+
+Error
+
+
+Resources
+
+References
+
+Sorting Algorithms: Research on complexity and sorting strategies (Quick Sort, Bucket Sort).
+
+Data Structures: Stack implementation principles (LIFO).
+
+42 Norm: Adherence to the strict coding standard of the school.
+
+AI Usage
+
+As required by the project guidelines, Artificial Intelligence was used during the development process for specific tasks:
+
+Debugging: Identifying memory leaks in the parsing logic (specifically within get_long_tab and last_verif functions) and resolving segmentation faults related to linked list traversal.
+
+Code Refactoring: Assisting in reducing function length to comply with the 25-line limit of the 42 Norm (e.g., refactoring search_min_max using helper functions).
+
+Concept Clarification: Explaining technical behaviors such as long vs int overflow handling and standard input/output management for checkers.
+
+Logic Verification: Comparing the logic of rb vs rrb optimization during the push-back phase to ensure the shortest path was chosen.
+
+Note: All code and logic were reviewed, tested, and understood manually.

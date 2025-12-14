@@ -12,12 +12,11 @@
 
 #include "../push_swap.h"
 
-void    rrr(t_list **stack_a, t_list **stack_b)
+void	rrr(t_list **stack_a, t_list **stack_b)
 {
-
-    if (!stack_b || !stack_a)
-        return ;
-    _rra(stack_a);
-    _rrb(stack_b);
-    write(1, "rrr\n", 4);
+	if (!stack_b || !stack_a)
+		return ;
+	_rra(stack_a);
+	_rrb(stack_b);
+	write(1, "rrr\n", 4);
 }

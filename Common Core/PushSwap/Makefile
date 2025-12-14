@@ -44,11 +44,10 @@ SRCS = main.c \
 	   algo/chunk_sort.c \
 	   algo/utils_chunk.c \
 	   parsing/last_verif.c \
-	   parsing/signs_and_long_max.c \
+	   parsing/signs.c \
 	   parsing/ft_strcmp.c \
 	   nodes/ft_lstclear.c \
-	   parsing/check_empty_string.c \
-	   functions_utils/ft_strlen_skip.c
+	   parsing/check_empty_string.c
 	   
 OBJS = $(SRCS:.c=.o)
 

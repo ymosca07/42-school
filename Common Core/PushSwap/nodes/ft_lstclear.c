@@ -12,14 +12,15 @@
 
 #include "../push_swap.h"
 
-void ft_lstclear(t_list *node)
+void	ft_lstclear(t_list *node)
 {
-    t_list *clear = NULL;
+	t_list	*clear;
 
-    while (node)
-    {
-        clear = node->next;
-        free(node);
-        node = clear;
-    }
+	clear = NULL;
+	while (node)
+	{
+		clear = node->next;
+		free(node);
+		node = clear;
+	}
 }

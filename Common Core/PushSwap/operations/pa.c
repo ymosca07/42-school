@@ -12,16 +12,15 @@
 
 #include "../push_swap.h"
 
-void    pa(t_list **stack_a, t_list **stack_b)
+void	pa(t_list **stack_a, t_list **stack_b)
 {
-    if (!stack_a || !stack_b || !*stack_b)
-        return ;
-    t_list  *first_b;
-    first_b = *stack_b;
-    *stack_b = (*stack_b)->next;
-    first_b->next = NULL;
+	t_list	*first_b;
 
-    ft_lstadd_front(stack_a, first_b);
-    
-    write(1, "pa\n", 3);
+	if (!stack_a || !stack_b || !*stack_b)
+		return ;
+	first_b = *stack_b;
+	*stack_b = (*stack_b)->next;
+	first_b->next = NULL;
+	ft_lstadd_front(stack_a, first_b);
+	write(1, "pa\n", 3);
 }

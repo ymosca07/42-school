@@ -12,11 +12,11 @@
 
 #include "../push_swap.h"
 
-void ss(t_list **stack_a, t_list **stack_b)
+void	ss(t_list **stack_a, t_list **stack_b)
 {
-    if (!stack_a || !stack_b)
-        return ;
-    _sa(stack_a);
-    _sb(stack_b);
-    write(1, "ss\n", 3);
+	if (!stack_a || !stack_b)
+		return ;
+	_sa(stack_a);
+	_sb(stack_b);
+	write(1, "ss\n", 3);
 }

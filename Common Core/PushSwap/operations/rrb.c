@@ -12,22 +12,21 @@
 
 #include "../push_swap.h"
 
-void    rrb(t_list **stack_b)
+void	rrb(t_list **stack_b)
 {
-    t_list *before_last;
-    t_list *last;
-    
-    if (!stack_b || !*stack_b || !(*stack_b)->next)
-        return ;
-        
-    last = *stack_b;
-    before_last = *stack_b;
-    while (last->next)
-        last = last->next;
-    while (before_last->next->next)
-        before_last = before_last->next;
-    before_last->next = NULL;
-    last->next = *stack_b;
-    *stack_b = last;
-    write(1, "rrb\n", 4);
+	t_list	*before_last;
+	t_list	*last;
+
+	if (!stack_b || !*stack_b || !(*stack_b)->next)
+		return ;
+	last = *stack_b;
+	before_last = *stack_b;
+	while (last->next)
+		last = last->next;
+	while (before_last->next->next)
+		before_last = before_last->next;
+	before_last->next = NULL;
+	last->next = *stack_b;
+	*stack_b = last;
+	write(1, "rrb\n", 4);
 }

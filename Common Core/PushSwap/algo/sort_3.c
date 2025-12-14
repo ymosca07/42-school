@@ -12,12 +12,13 @@
 
 #include "../push_swap.h"
 
-static void    second_option_3(t_list **stack_a)
+static void	second_option_3(t_list **stack_a)
 {
-    ra(stack_a);
-    ra(stack_a);
-    sa(stack_a);
+	ra(stack_a);
+	ra(stack_a);
+	sa(stack_a);
 }
+
 void	sort_3(t_list **stack_a)
 {
 	long	first;
@@ -35,7 +36,7 @@ void	sort_3(t_list **stack_a)
 		sa(stack_a);
 	}
 	else if (first < second && second > third && first < third)
-        second_option_3(stack_a);
+		second_option_3(stack_a);
 	else if (first < second && second > third && first > third)
 		rra(stack_a);
 	else if (first > second && second < third && first < third)
@@ -43,4 +44,3 @@ void	sort_3(t_list **stack_a)
 	else if (first > second && second < third && third < first)
 		ra(stack_a);
 }
-

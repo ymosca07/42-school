@@ -12,14 +12,14 @@
 
 #include "../push_swap.h"
 
-void sort_2(t_list **stack_a)
+void	sort_2(t_list **stack_a)
 {
-    t_list *first;
-    t_list *second;
+	t_list	*first;
+	t_list	*second;
 
-    first = *stack_a;
-    second = (*stack_a)->next;
-    if (first->value > second->value)
-        sa(stack_a);
-    return ;
+	first = *stack_a;
+	second = (*stack_a)->next;
+	if (first->value > second->value)
+		sa(stack_a);
+	return ;
 }

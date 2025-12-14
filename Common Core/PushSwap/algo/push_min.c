@@ -12,29 +12,28 @@
 
 #include "../push_swap.h"
 
-void    push_min(t_list **stack_a, t_list **stack_b, long min, int min_position)
+void	push_min(t_list **stack_a, t_list **stack_b, long min, int min_position)
 {
-    t_list *node;
+	t_list	*node;
 
-    node = *stack_a;
-    
-    while (node && node->value != min)
-    {
-        node = node->next;
-    }
-    if (node && node->value == min)
-    {
-        if (min_position <= 2)
-        {
-            while (((*stack_a)->value) != node->value)
-                ra(stack_a);
-        }
-        else if (min_position > 2)
-        {
-            while (((*stack_a)->value) != node->value)
-                rra(stack_a);
-        }
-        pb(stack_a, stack_b);
-        return ;
-    }
+	node = *stack_a;
+	while (node && node->value != min)
+	{
+		node = node->next;
+	}
+	if (node && node->value == min)
+	{
+		if (min_position <= 2)
+		{
+			while (((*stack_a)->value) != node->value)
+				ra(stack_a);
+		}
+		else if (min_position > 2)
+		{
+			while (((*stack_a)->value) != node->value)
+				rra(stack_a);
+		}
+		pb(stack_a, stack_b);
+		return ;
+	}
 }

@@ -12,21 +12,18 @@
 
 #include "../push_swap.h"
 
-void sb(t_list **stack_b)
+void	sb(t_list **stack_b)
 {
-    t_list *first;
-    t_list *second;
-    long tmp;
+	t_list	*first;
+	t_list	*second;
+	long	tmp;
 
-    if (!stack_b || !*stack_b || !(*stack_b)->next)
-        return ;
-
-    first = *stack_b;
-    second = (*stack_b)->next;
-
-    tmp = first->value;
-    first->value = second->value;
-    second->value = tmp;
-    
-    write(1, "sb\n", 3);
+	if (!stack_b || !*stack_b || !(*stack_b)->next)
+		return ;
+	first = *stack_b;
+	second = (*stack_b)->next;
+	tmp = first->value;
+	first->value = second->value;
+	second->value = tmp;
+	write(1, "sb\n", 3);
 }

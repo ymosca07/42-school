@@ -12,19 +12,19 @@
 
 #include "../push_swap.h"
 
-int ft_count_len(char **input)
+int	ft_count_len(char **input)
 {
-    int count;
-    int n;
+	int	count;
+	int	n;
 
-    n = 1;
-    count = 0;
-    while (input[n])
-    {
-        count += ft_strlen(input[n]);
-        if (input[n + 1])
-            count += 1;
-        n++;
-    }
-    return (count);
+	n = 1;
+	count = 0;
+	while (input[n])
+	{
+		count += ft_strlen(input[n]);
+		if (input[n + 1])
+			count += 1;
+		n++;
+	}
+	return (count);
 }

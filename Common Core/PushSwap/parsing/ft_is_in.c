@@ -12,24 +12,24 @@
 
 #include "../push_swap.h"
 
-int ft_is_in(char **input)
+int	ft_is_in(char **input)
 {
-    int i;
-    int n;
+	int	i;
+	int	n;
 
-    i = 1;
-    while (input[i])
-    {
-        n = 0;
-        while (input[i][n])
-        {
-            if (!(input[i][n] >= '0' && input[i][n] <= '9')
-                && (input[i][n] != ' ') && (input[i][n] != '+')
-                && (input[i][n] != '-'))
-                return(0);
-            n++;
-        }
-        i++;
-    }
-    return (1);
+	i = 1;
+	while (input[i])
+	{
+		n = 0;
+		while (input[i][n])
+		{
+			if (!(input[i][n] >= '0' && input[i][n] <= '9')
+				&& (input[i][n] != ' ') && (input[i][n] != '+')
+				&& (input[i][n] != '-'))
+				return (0);
+			n++;
+		}
+		i++;
+	}
+	return (1);
 }

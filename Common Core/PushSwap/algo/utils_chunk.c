@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils_chunk.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 16:03:29 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 21:22:45 by ymosca--         ###   ########.fr       */
+/*   Updated: 2025/12/14 13:42:33 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_swap(int *a, int *b)
+static void	ft_swap(int *a, int *b)
 {
 	int	tmp;
 
@@ -38,13 +38,11 @@ void	ft_sort_int_tab(int *tab, int size)
 	}
 }
 
-int chunk_size(int size)
+int	chunk_size(int size)
 {
-    if (size <= 20)
-        return (5);
-        
-    if (size <= 100)
-        return (15);
-        
-    return (35);
+	if (size <= 20)
+		return (5);
+	if (size <= 100)
+		return (15);
+	return (35);
 }

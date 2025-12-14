@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ymosca-- <ymosca--@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:09:37 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/11 21:22:06 by ymosca--         ###   ########.fr       */
+/*   Updated: 2025/12/14 13:41:16 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-size_t	ft_count_words(char const *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -37,7 +37,7 @@ size_t	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-size_t	get_words(char const *s, char c, size_t words_number)
+static size_t	get_words(char const *s, char c, size_t words_number)
 {
 	size_t	i;
 	size_t	count;
@@ -65,7 +65,7 @@ size_t	get_words(char const *s, char c, size_t words_number)
 	return (count);
 }
 
-size_t	ft_start(char const *s, char c, size_t words_number)
+static size_t	ft_start(char const *s, char c, size_t words_number)
 {
 	size_t	i;
 	size_t	count;
@@ -93,7 +93,7 @@ size_t	ft_start(char const *s, char c, size_t words_number)
 	return (0);
 }
 
-char	**free_all(char **split, size_t nb_words)
+static char	**free_all(char **split, size_t nb_words)
 {
 	size_t	i;
 
