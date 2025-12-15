@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 13:27:16 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/14 13:51:38 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/15 12:15:25 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@ static void	append_all_index(t_list **stack_a, int size)
 	int		i;
 
 	tab = malloc(sizeof(int) * size);
-	tmp = *stack_a;
-	i = 0;
-	while (tmp)
+	if (!tab)
 	{
-		tab[i] = (tmp)->value;
-		i++;
-		tmp = (tmp)->next;
+		ft_lstclear(*stack_a);
+		error_signal();
 	}
+	tmp = *stack_a;
+	i = fill_tab(tmp, tab);
 	ft_sort_int_tab(tab, i);
 	tmp = *stack_a;
 	while (tmp)

@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 16:03:29 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/14 13:42:33 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/15 12:00:42 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,20 @@ void	ft_sort_int_tab(int *tab, int size)
 		else
 			current++;
 	}
+}
+
+int	fill_tab(t_list *tmp, int *tab)
+{
+	int	i;
+
+	i = 0;
+	while (tmp)
+	{
+		tab[i] = (tmp)->value;
+		i++;
+		tmp = (tmp)->next;
+	}
+	return (i);
 }
 
 int	chunk_size(int size)

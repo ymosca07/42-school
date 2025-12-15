@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:16:59 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/14 17:55:39 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/15 12:01:13 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ void				verif_signs(char **tmp);
 int					ft_count_len(char **input);
 void				tmp_error(char **tmp);
 int					is_sorted(t_list **stack_a);
+int					fill_tab(t_list *tmp, int *tab);
 
 #endif
