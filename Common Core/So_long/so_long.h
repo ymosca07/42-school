@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:23:29 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/18 17:39:19 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/23 18:18:21 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include "get_next_line/get_next_line.h"
+#include "minilibx-linux/mlx.h"
 
 typedef struct s_game
 {
@@ -39,6 +40,7 @@ typedef struct s_game
     void    *img_player; // Skin du joueur
     void    *img_collect; // Skin des collectibles
     void    *img_exit; // Le skin de la "sortie" -> Exit du jeu quand activé
+    void    *img_nocol;
 } t_game;
 
 /* Utils - Prototypage */
@@ -46,11 +48,15 @@ int     ft_strlen(const char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(char *str);
 char    **copy_map(char **map, t_game *game);
+void    free_all(char **tmp);
 
 /* Parsing - Prototypage */
 int     get_height_map(char *file);
 void    read_map(char *file, t_game *game);
 void    player_position(t_game *game);
+
+/* Sprites - Prototypage */
+void    aff_sprites(t_game *game, void *mlx, void *win);
 
 /* Verifications - Prototypage */
 void    check_stuff(t_game *game);
@@ -60,5 +66,8 @@ int     ber_extension(char *argv);
 void    map_len(t_game *game);
 void    flood_fill(int y, int x, char f, char **map);
 void    end_possible(char **map);
+
+/* Inputs - Prototypage */
+int inputs_keycode(int keycode, t_game *game);
 
 #endif

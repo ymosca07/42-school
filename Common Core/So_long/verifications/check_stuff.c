@@ -6,13 +6,13 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 13:20:26 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/18 15:59:49 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/23 17:58:35 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void check_count(int c, int e, int p)
+static void check_count(int c, int e, int p, t_game *game)
 {
     if (c == 0)
         error_signal("Error: ");
@@ -20,6 +20,26 @@ static void check_count(int c, int e, int p)
         error_signal("Error: ");
     if (p != 1)
         error_signal("Error: ");
+    game->collectibles = c;
+}
+
+static void valid_char_check(t_game *game)
+{
+    int n;
+    int i;
+
+    n = -1;
+    while (game->map[++n])
+    {
+        i = -1;
+        while (game->map[n][++i])
+        {
+            if (!(game->map[n][i] == 'C' || game->map[n][i] == '0' 
+                || game->map[n][i] == '1' || game->map[n][i] == 'E' 
+                || game->map[n][i] == 'P'))
+                error_signal("Error: Bad char");
+        }
+    }
 }
 
 void    check_stuff(t_game *game)
@@ -47,5 +67,6 @@ void    check_stuff(t_game *game)
                 e++;
         }
     }
-    check_count(c, e, p);
+    valid_char_check(game);
+    check_count(c, e, p, game);
 }

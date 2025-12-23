@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   end_possible.c                                     :+:      :+:    :+:   */
+/*   free_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/18 17:17:48 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/22 11:39:15 by yamosca-         ###   ########.fr       */
+/*   Created: 2025/12/22 10:52:10 by yamosca-          #+#    #+#             */
+/*   Updated: 2025/12/22 10:53:35 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void    end_possible(char **map)
+void    free_all(char **tmp)
 {
     int n;
-    int i;
 
     n = -1;
-    while (map[++n])
-    {
-        i = -1;
-        while (map[n][++i])
-        {
-            if (map[n][i] == 'E' || map[n][i] == 'C')
-            {
-                free_all(map);
-                error_signal("Error: no possibilities of end");
-            }
-        }
-    }
-    free_all(map);
+    while (tmp[++n])
+        free(tmp[n]);
+    free(tmp);
 }

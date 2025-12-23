@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:04:38 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/18 17:54:54 by yamosca-         ###   ########.fr       */
+/*   Updated: 2025/12/23 17:51:37 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
     game = ft_calloc(sizeof(t_game), 1);
     
     if (!game)
-        return (0);
+        return (1);
 
     /* Get map's height and read all map without verifications */
     read_map(argv[1], game);
@@ -53,6 +53,19 @@ int main(int argc, char **argv)
     flood_fill(game->player_y, game->player_x, 'F', tmp_map);
     end_possible(tmp_map);
     
+    /* Display window */
+    game->mlx = mlx_init();
+    if (!game->mlx)
+        return (1);
+    game->window = mlx_new_window(game->mlx, 1920, 1080, "Napolong");
+    
+    /* Image */
+    aff_sprites(game, game->mlx, game->window);
+
+    mlx_hook(game->window, 2, 1L<<0, inputs_keycode, game);
+    
+    mlx_loop(game->mlx);
+
     /* Display map testing */
     #include <stdio.h>
     
@@ -63,13 +76,7 @@ int main(int argc, char **argv)
         printf("%s\n", game->map[n]);
         n++;
     }
-
+    free_all(game->map);
+    free(game);
     return (0);
-    
-    /* Map's len verification */
-    // map_len()
-
-    // mlx_init();
-    // mlx_new_window();
-    // mlx_loop();
 }
