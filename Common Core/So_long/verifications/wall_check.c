@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 14:09:06 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/18 14:34:46 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/07 13:08:45 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ static void first_line(t_game *game)
     while (game->map[0][i])
     {
         if (game->map[0][i] != '1')
-            error_signal("Error: the map must be surrounded by walls");
+        {
+            free_struct(game);
+            error_signal("Error: the map must be surrounded by walls\n");
+        }
         i++;
     }
 }
@@ -33,7 +36,10 @@ static void first_char(t_game *game)
     while (game->map[n])
     {
         if (game->map[n][0] != '1')
-            error_signal("Error: the map must be surrounded by walls");
+        {
+            free_struct(game);
+            error_signal("Error: the map must be surrounded by walls\n");
+        }
         n++;
     }
 }
@@ -51,7 +57,10 @@ static void last_char(t_game *game)
         while (game->map[n][i])
         {
             if (game->map[n][ft_strlen(game->map[n]) - 1] != '1')
-                error_signal("Error: the map must be surrounded by walls");
+            {
+                free_struct(game);
+                error_signal("Error: the map must be surrounded by walls\n");
+            }
             i++;
         }
         n++;
@@ -68,7 +77,10 @@ static void last_line(t_game *game)
     while (game->map[n][i])
     {
         if (game->map[n][i] != '1')
-            error_signal("Error: the map must be surrounded by walls");
+        {
+            free_struct(game);
+            error_signal("Error: the map must be surrounded by walls\n");
+        }
         i++;
     }
 }

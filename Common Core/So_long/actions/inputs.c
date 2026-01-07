@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 16:36:24 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/23 19:15:10 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/07 12:35:22 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,19 @@ static void close_game(t_game *game)
         mlx_destroy_image(game->mlx, game->img_wall);
     if (game->img_floor)
         mlx_destroy_image(game->mlx, game->img_floor);
+    if (game->img_nocol)
+        mlx_destroy_image(game->mlx, game->img_nocol);
     if (game->window)
         mlx_destroy_window(game->mlx, game->window);
-    mlx_destroy_display(game->mlx);    
-    free(game->mlx);
+    mlx_destroy_display(game->mlx);
     free_all(game->map);
     exit(0);
 }
 
 static int exit_case(int y, int x, t_game *game)
 {
-    int width;
-    int height;
-
     if (game->collectibles == 0)
         close_game(game);
-    game->img_nocol = mlx_xpm_file_to_image(game->mlx, "./sprites/nocol.xpm", &width, &height);
     mlx_put_image_to_window(game->mlx, game->window, game->img_nocol, x * 64, y * 64);
     game->steps++;
     printf("Step's counter: %d\n", game->steps);
@@ -81,7 +78,6 @@ static void move_player(int y, int x, t_game *game)
     }
     game->steps++;
     printf("Step's counter: %d\n", game->steps);
-    printf("%d\n", signal);
     if (signal == 1)
     {
         after_exit(y, x, &signal, game);

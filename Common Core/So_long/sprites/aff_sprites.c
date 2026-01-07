@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 13:46:48 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/22 17:51:45 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/07 12:43:49 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,8 @@ static void aff_player(t_game *game, void *mlx, void *win)
 {
     int n;
     int i;
-    int width;
-    int height;
     
     n = -1;
-    game->img_player = mlx_xpm_file_to_image(mlx, "./sprites/napolong.xpm", &width, &height);
-    if (!game->img_player)
-    {
-        write(2, "Error: phemin incorrect\n", 52);
-        exit(1);
-    }
     while (game->map[++n])
     {
         i = -1;
@@ -41,16 +33,8 @@ static void aff_floor(t_game *game, void *mlx, void *win)
 {
     int n;
     int i;
-    int width;
-    int height;
     
     n = -1;
-    game->img_floor = mlx_xpm_file_to_image(mlx, "./sprites/floor.xpm", &width, &height);
-    if (!game->img_floor)
-    {
-        write(2, "Error: sprite floor introuvable ou chemin incorrect\n", 52);
-        exit(1);
-    }
     while (game->map[++n])
     {
         i = -1;
@@ -66,13 +50,8 @@ static void aff_wall(t_game *game, void *mlx, void *win)
 {
     int n;
     int i;
-    int width;
-    int height;
     
     n = -1;
-    game->img_wall = mlx_xpm_file_to_image(mlx, "./sprites/wall.xpm", &width, &height);
-    if (!game->img_wall)
-        error_signal("Wall's error");
     while (game->map[++n])
     {
         i = -1;
@@ -88,16 +67,8 @@ static void aff_collectibles_and_exit(t_game *game, void *mlx, void *win)
 {
     int n;
     int i;
-    int width;
-    int height;
     
     n = -1;
-    game->img_collect = mlx_xpm_file_to_image(mlx, "./sprites/collectible.xpm", &width, &height);
-    if (!game->img_collect)
-        error_signal("Collectible's error");
-    game->img_exit = mlx_xpm_file_to_image(mlx, "./sprites/exit.xpm", &width, &height);
-        if (!game->img_exit)
-        error_signal("Exit's error");
     while (game->map[++n])
     {
         i = -1;
