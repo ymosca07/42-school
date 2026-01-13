@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:23:29 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/07 12:40:00 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:50:39 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include "get_next_line/get_next_line.h"
+#include "printf/ft_printf.h"
 #include "minilibx-linux/mlx.h"
 
 typedef struct s_game
@@ -64,6 +65,7 @@ void    end_possible(char **map);
 void    screen_security(t_game *game);
 void    free_struct(t_game *game);
 
-int inputs_keycode(int keycode, t_game *game);
+int     inputs_keycode(int keycode, t_game *game);
+int     close_game(t_game *game);
 
 #endif

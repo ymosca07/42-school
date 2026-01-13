@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ber_extension.c                                    :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/15 16:19:17 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/17 13:20:52 by yamosca-         ###   ########.fr       */
+/*   Created: 2025/11/10 18:18:48 by yamosca-          #+#    #+#             */
+/*   Updated: 2025/11/17 19:22:39 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "ft_printf.h"
 
-int ber_extension(char *argv)
+int	ft_printf(const char *format, ...)
 {
-    int i;
+	va_list	args;
+	int		i;
+	int		count;
 
-    i = ft_strlen(argv);
-
-    if (argv[i - 1] != 'r')
-        return (1);
-    if (argv[i - 2] != 'e')
-        return (1);
-    if (argv[i - 3] != 'b')
-        return (1);
-    if (argv[i - 4] != '.')
-        return (1);
-    return (0);
+	count = 0;
+	i = 0;
+	va_start(args, format);
+	while (format[i])
+	{
+		if (format[i] != '%')
+		{
+			write(1, &format[i], 1);
+			count++;
+		}
+		else
+		{
+			count += search_type(format[i + 1], args);
+			i++;
+		}
+		i++;
+	}
+	return (count);
 }

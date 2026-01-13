@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:04:38 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/07 13:07:33 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:38:34 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	main(int argc, char **argv)
     load(game, game->mlx);
 	aff_sprites(game, game->mlx, game->window);
 	mlx_hook(game->window, 2, 1L << 0, inputs_keycode, game);
+	mlx_hook(game->window, 17, 0, close_game, game);
 	mlx_loop(game->mlx);
 	return (0);
 }

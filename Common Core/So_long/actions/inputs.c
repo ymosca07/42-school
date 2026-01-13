@@ -6,14 +6,13 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 16:36:24 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/07 12:35:22 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:51:14 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-#include <stdio.h>
+#include "../so_long.h"
 
-static void close_game(t_game *game)
+int close_game(t_game *game)
 {
     if (game->img_collect)
         mlx_destroy_image(game->mlx, game->img_collect);
@@ -40,7 +39,7 @@ static int exit_case(int y, int x, t_game *game)
         close_game(game);
     mlx_put_image_to_window(game->mlx, game->window, game->img_nocol, x * 64, y * 64);
     game->steps++;
-    printf("Step's counter: %d\n", game->steps);
+    ft_printf("Step's counter: %d\n", game->steps);
     game->map[game->player_y][game->player_x] = '0';
     mlx_put_image_to_window(game->mlx, game->window, game->img_floor, game->player_x * 64, game->player_y * 64);
     game->player_y = y;
@@ -77,13 +76,12 @@ static void move_player(int y, int x, t_game *game)
         return ;
     }
     game->steps++;
-    printf("Step's counter: %d\n", game->steps);
+    ft_printf("Step's counter: %d\n", game->steps);
     if (signal == 1)
     {
         after_exit(y, x, &signal, game);
         return ;
     }
-    
     game->map[game->player_y][game->player_x] = '0';
     game->player_y = y;
     game->player_x = x;

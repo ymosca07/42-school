@@ -11,7 +11,11 @@ SRCS = $(wildcard *.c) \
 	   $(wildcard sprites/*.c) \
 	   $(wildcard actions/*.c) \
 	   get_next_line/get_next_line.c \
-	   get_next_line/get_next_line_utils.c
+	   get_next_line/get_next_line_utils.c \
+	   printf/ft_printf.c \
+	   printf/search_type.c \
+	   printf/functions_utils.c \
+	   printf/functions2_utils.c
 	   
 OBJS = $(SRCS:.c=.o)
 
