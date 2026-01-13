@@ -6,13 +6,13 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:23:32 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/17 13:28:25 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/13 21:33:06 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int get_height_map(char *file)
+int get_height_map(t_game *game, char *file)
 {
     int fd;
     char *tmp;
@@ -20,7 +20,10 @@ int get_height_map(char *file)
 
     fd = open(file, O_RDONLY);
     if (fd < 0)
-        return (0);
+    {
+        free_struct(game);
+        error_signal("Error: file descriptor error\n");
+    }
     count = 0;
     tmp = get_next_line(fd);
     while (tmp != NULL)

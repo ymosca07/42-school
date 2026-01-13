@@ -14,9 +14,19 @@
 
 static void map_allocation(t_game *game, char *file)
 {
-    game->map_h = get_height_map(file);
+    game->map_h = get_height_map(game, file);
     game->map = (char **)ft_calloc(sizeof(char *), game->map_h + 1);
     if (!game->map)
+    {
+        free_struct(game);
+        error_signal("Error: allocation error\n");
+    }
+}
+
+static void fill_map(t_game *game, char *tmp, int n)
+{
+    game->map[n] = tmp;
+    if (!game->map[n])
     {
         free_struct(game);
         error_signal("Error: allocation error\n");
@@ -33,18 +43,19 @@ void read_map(char *file, t_game *game)
     n = 0;
     map_allocation(game, file);
     fd = open(file, O_RDONLY);
+    if (fd < 0)
+    {
+        free_struct(game);
+        error_signal("Error: file descriptor");
+    }
     line = game->map_h;
     while (line-- > 0)
     {
         tmp = get_next_line(fd);
-        game->map[n] = tmp;
-        if (!game->map[n])
-        {
-            free_struct(game);
-            error_signal("Error: allocation error\n");
-        }
+        fill_map(game, tmp, n);
         if (game->map[n][ft_strlen(game->map[n]) - 1] == '\n')
             game->map[n][ft_strlen(game->map[n]) - 1] = '\0';
         n++;
     }
+    close(fd);
 }
