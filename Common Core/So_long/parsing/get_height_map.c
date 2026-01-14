@@ -12,26 +12,26 @@
 
 #include "../so_long.h"
 
-int get_height_map(t_game *game, char *file)
+int	get_height_map(t_game *game, char *file)
 {
-    int fd;
-    char *tmp;
-    int count;
+	int		fd;
+	char	*tmp;
+	int		count;
 
-    fd = open(file, O_RDONLY);
-    if (fd < 0)
-    {
-        free_struct(game);
-        error_signal("Error: file descriptor error\n");
-    }
-    count = 0;
-    tmp = get_next_line(fd);
-    while (tmp != NULL)
-    {
-        free(tmp);
-        count++;
-        tmp = get_next_line(fd);
-    }
-    close(fd);
-    return (count);
+	fd = open(file, O_RDONLY);
+	if (fd < 0)
+	{
+		free_struct(game);
+		error_signal("Error: file descriptor error\n");
+	}
+	count = 0;
+	tmp = get_next_line(fd);
+	while (tmp != NULL)
+	{
+		free(tmp);
+		count++;
+		tmp = get_next_line(fd);
+	}
+	close(fd);
+	return (count);
 }

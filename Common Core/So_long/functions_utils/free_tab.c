@@ -12,12 +12,12 @@
 
 #include "../so_long.h"
 
-void    free_all(char **tmp)
+void	free_all(char **tmp)
 {
-    int n;
+	int	n;
 
-    n = -1;
-    while (tmp[++n])
-        free(tmp[n]);
-    free(tmp);
+	n = -1;
+	while (tmp[++n])
+		free(tmp[n]);
+	free(tmp);
 }

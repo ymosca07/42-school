@@ -12,23 +12,23 @@
 
 #include "../so_long.h"
 
-void    end_possible(char **map)
+void	end_possible(char **map)
 {
-    int n;
-    int i;
+	int	n;
+	int	i;
 
-    n = -1;
-    while (map[++n])
-    {
-        i = -1;
-        while (map[n][++i])
-        {
-            if (map[n][i] == 'E' || map[n][i] == 'C')
-            {
-                free_all(map);
-                error_signal("Error: no possibilities of end\n");
-            }
-        }
-    }
-    free_all(map);
+	n = -1;
+	while (map[++n])
+	{
+		i = -1;
+		while (map[n][++i])
+		{
+			if (map[n][i] == 'E' || map[n][i] == 'C')
+			{
+				free_all(map);
+				error_signal("Error: no possibilities of end\n");
+			}
+		}
+	}
+	free_all(map);
 }

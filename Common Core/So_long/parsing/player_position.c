@@ -12,23 +12,23 @@
 
 #include "../so_long.h"
 
-void    player_position(t_game *game)
+void	player_position(t_game *game)
 {
-    int i;
-    int n;
+	int	i;
+	int	n;
 
-    n = -1;
-    while (game->map[++n])
-    {
-        i = -1;
-        while (game->map[n][++i])
-        {
-            if (game->map[n][i] == 'P')
-            {
-                game->player_y = n;
-                game->player_x = i;
-                return ;
-            }
-        }
-    }
+	n = -1;
+	while (game->map[++n])
+	{
+		i = -1;
+		while (game->map[n][++i])
+		{
+			if (game->map[n][i] == 'P')
+			{
+				game->player_y = n;
+				game->player_x = i;
+				return ;
+			}
+		}
+	}
 }

@@ -12,28 +12,28 @@
 
 #include "../so_long.h"
 
-static void free_tab(t_game *game)
+static void	free_tab(t_game *game)
 {
-    int n;
-    char **map;
+	int		n;
+	char	**map;
 
-    map = game->map;
-    n = -1;
-    while (map[++n])
-        free(map[n]);
-    free(map);
+	map = game->map;
+	n = -1;
+	while (map[++n])
+		free(map[n]);
+	free(map);
 }
 
-void    free_struct(t_game *game)
+void	free_struct(t_game *game)
 {
-    free_tab(game);
-    free(game->window);
-    free(game->mlx);
-    free(game->img_collect);
-    free(game->img_exit);
-    free(game->img_player);
-    free(game->img_nocol);
-    free(game->img_wall);
-    free(game->img_floor);
-    free(game);
+	free_tab(game);
+	free(game->window);
+	free(game->mlx);
+	free(game->img_collect);
+	free(game->img_exit);
+	free(game->img_player);
+	free(game->img_nocol);
+	free(game->img_wall);
+	free(game->img_floor);
+	free(game);
 }

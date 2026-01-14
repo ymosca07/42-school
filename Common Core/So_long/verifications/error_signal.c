@@ -12,8 +12,8 @@
 
 #include "../so_long.h"
 
-void    error_signal(char *str)
+void	error_signal(char *str)
 {
-    write(2, str, ft_strlen(str));
-    exit(1);
+	write(2, str, ft_strlen(str));
+	exit(1);
 }

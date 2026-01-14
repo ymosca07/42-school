@@ -12,19 +12,18 @@
 
 #include "../so_long.h"
 
-int ber_extension(char *argv)
+int	ber_extension(char *argv)
 {
-    int i;
+	int	i;
 
-    i = ft_strlen(argv);
-
-    if (argv[i - 1] != 'r')
-        return (1);
-    if (argv[i - 2] != 'e')
-        return (1);
-    if (argv[i - 3] != 'b')
-        return (1);
-    if (argv[i - 4] != '.')
-        return (1);
-    return (0);
+	i = ft_strlen(argv);
+	if (argv[i - 1] != 'r')
+		return (1);
+	if (argv[i - 2] != 'e')
+		return (1);
+	if (argv[i - 3] != 'b')
+		return (1);
+	if (argv[i - 4] != '.')
+		return (1);
+	return (0);
 }

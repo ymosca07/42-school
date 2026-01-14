@@ -12,20 +12,20 @@
 
 #include "../so_long.h"
 
-void    map_len(t_game *game)
+void	map_len(t_game *game)
 {
-    int j;
-    char *current;
-    
-    j = 0;
-    current = game->map[0];
-    while (game->map[j])
-    {
-        if (ft_strlen(current) != ft_strlen(game->map[j]))
-        {
-            free_struct(game);
-            error_signal("Error: bad map's size\n");
-        }
-        j++;
-    }
+	int		j;
+	char	*current;
+
+	j = 0;
+	current = game->map[0];
+	while (game->map[j])
+	{
+		if (ft_strlen(current) != ft_strlen(game->map[j]))
+		{
+			free_struct(game);
+			error_signal("Error: bad map's size\n");
+		}
+		j++;
+	}
 }
