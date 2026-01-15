@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 14:09:06 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/07 13:08:45 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/15 17:41:57 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	first_line(t_game *game)
 		if (game->map[0][i] != '1')
 		{
 			free_struct(game);
-			error_signal("Error: the map must be surrounded by walls\n");
+			error_signal("Error\nThe map must be surrounded by walls");
 		}
 		i++;
 	}
@@ -38,7 +38,7 @@ static void	first_char(t_game *game)
 		if (game->map[n][0] != '1')
 		{
 			free_struct(game);
-			error_signal("Error: the map must be surrounded by walls\n");
+			error_signal("Error\nThe map must be surrounded by walls");
 		}
 		n++;
 	}
@@ -59,7 +59,7 @@ static void	last_char(t_game *game)
 			if (game->map[n][ft_strlen(game->map[n]) - 1] != '1')
 			{
 				free_struct(game);
-				error_signal("Error: the map must be surrounded by walls\n");
+				error_signal("Error\nThe map must be surrounded by walls");
 			}
 			i++;
 		}
@@ -79,7 +79,7 @@ static void	last_line(t_game *game)
 		if (game->map[n][i] != '1')
 		{
 			free_struct(game);
-			error_signal("Error: the map must be surrounded by walls\n");
+			error_signal("Error\nThe map must be surrounded by walls");
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:23:32 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/13 21:33:06 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/15 17:36:58 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	get_height_map(t_game *game, char *file)
 	if (fd < 0)
 	{
 		free_struct(game);
-		error_signal("Error: file descriptor error\n");
+		error_signal("Error\nFile descriptor error");
 	}
 	count = 0;
 	tmp = get_next_line(fd);

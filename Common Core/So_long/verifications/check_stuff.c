@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 13:20:26 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/07 13:07:58 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/15 17:41:06 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	check_count(int c, int e, int p, t_game *game)
 	if (c == 0 || e != 1 || p != 1)
 	{
 		free_struct(game);
-		error_signal("Error: incorrect map initialization\n");
+		error_signal("Error\nIncorrect map initialization");
 	}
 	game->collectibles = c;
 }
@@ -38,7 +38,7 @@ static void	valid_char_check(t_game *game)
 					|| game->map[n][i] == 'P'))
 			{
 				free_struct(game);
-				error_signal("Error: Forbidden char\n");
+				error_signal("Error\nForbidden char");
 			}
 		}
 	}

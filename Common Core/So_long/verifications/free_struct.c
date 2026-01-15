@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 11:07:40 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/07 11:30:23 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/14 17:54:45 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,14 @@ static void	free_tab(t_game *game)
 	char	**map;
 
 	map = game->map;
-	n = -1;
-	while (map[++n])
+	n = 0;
+	if (!map)
+		return ;
+	while (map[n])
+	{
 		free(map[n]);
+		n++;
+	}
 	free(map);
 }
 

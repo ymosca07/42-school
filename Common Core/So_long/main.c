@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:04:38 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/14 16:57:58 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/15 17:48:51 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,29 @@ static void	load(t_game *game, void *mlx)
 	if (signal == 1)
 	{
 		free_struct(game);
-		error_signal("Error: image error\n");
+		error_signal("Error\nImage error");
 	}
 }
 
 static void	tmp_map(t_game *game)
 {
 	char	**tmp_map;
+	int		signal;
 
 	tmp_map = copy_map(game->map, game);
+	if (!tmp_map)
+	{
+		free_struct(game);
+		error_signal("Error\nMemory allocation");
+	}
 	flood_fill(game->player_y, game->player_x, 'F', tmp_map);
-	end_possible(tmp_map);
+	signal = end_possible(tmp_map);
+	if (signal == 1)
+	{
+		free_all(tmp_map);
+		free_struct(game);
+		error_signal("Error\nInvalid path");
+	}
 }
 
 static void	mlx_action(t_game *game)
@@ -54,12 +66,12 @@ int	main(int argc, char **argv)
 	t_game	*game;
 
 	if (argc != 2)
-		error_signal("Error: you must have 2 arguments\n");
+		error_signal("Error\nYou must have 2 arguments");
 	if (ber_extension(argv[1]) == 1)
-		error_signal("Error: extension must be .ber\n");
+		error_signal("Error\nExtension must be .ber");
 	game = ft_calloc(sizeof(t_game), 1);
 	if (!game)
-		error_signal("Error: allocation crash\n");
+		error_signal("Error\nAllocation crash");
 	read_map(argv[1], game);
 	check_group(game);
 	tmp_map(game);
@@ -67,7 +79,7 @@ int	main(int argc, char **argv)
 	if (!game->mlx)
 	{
 		free_struct(game);
-		error_signal("Error: mlx initialization\n");
+		error_signal("Error\nMlx initialization");
 	}
 	game->window = mlx_new_window(game->mlx, ft_strlen(game->map[0]) * 64,
 			game->map_h * 64, "Napolong");

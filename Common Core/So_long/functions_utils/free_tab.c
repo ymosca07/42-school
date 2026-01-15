@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:52:10 by yamosca-          #+#    #+#             */
-/*   Updated: 2025/12/22 10:53:35 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/14 17:42:06 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@ void	free_all(char **tmp)
 {
 	int	n;
 
-	n = -1;
-	while (tmp[++n])
+	n = 0;
+	while (tmp[n])
+	{
 		free(tmp[n]);
+		n++;
+	}
 	free(tmp);
 }

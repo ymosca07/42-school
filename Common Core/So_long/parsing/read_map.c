@@ -20,7 +20,7 @@ static void	map_allocation(t_game *game, char *file)
 	if (!game->map)
 	{
 		free_struct(game);
-		error_signal("Error: allocation error\n");
+		error_signal("Error\nAllocation error");
 	}
 }
 
@@ -30,7 +30,7 @@ static void	fill_map(t_game *game, char *tmp, int n)
 	if (!game->map[n])
 	{
 		free_struct(game);
-		error_signal("Error: allocation error\n");
+		error_signal("Error\nAllocation error");
 	}
 }
 
@@ -47,7 +47,7 @@ void	read_map(char *file, t_game *game)
 	if (fd < 0)
 	{
 		free_struct(game);
-		error_signal("Error: file descriptor");
+		error_signal("Error\nFile descriptor");
 	}
 	line = game->map_h;
 	while (line-- > 0)

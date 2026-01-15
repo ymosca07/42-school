@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:23:29 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/14 15:40:01 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/15 17:20:54 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void		error_signal(char *str);
 int			ber_extension(char *argv);
 void		map_len(t_game *game);
 void		flood_fill(int y, int x, char f, char **map);
-void		end_possible(char **map);
+int			end_possible(char **map);
 void		free_struct(t_game *game);
 
 int			inputs_keycode(int keycode, t_game *game);

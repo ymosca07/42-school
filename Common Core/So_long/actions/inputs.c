@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 16:36:24 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/14 15:26:54 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:49:30 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ int	close_game(t_game *game)
 	if (game->window)
 		mlx_destroy_window(game->mlx, game->window);
 	mlx_destroy_display(game->mlx);
+	free(game->mlx);
 	free_all(game->map);
+	free(game);
 	exit(0);
 }
 
