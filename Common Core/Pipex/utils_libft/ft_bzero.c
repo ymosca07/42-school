@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_pipes.c                                      :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 11:25:53 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/20 11:28:13 by yamosca-         ###   ########.fr       */
+/*   Created: 2025/10/14 16:45:19 by yamosca-          #+#    #+#             */
+/*   Updated: 2026/01/25 18:24:56 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../pipex.h"
 
-void    close_pipes(t_pipex *pipex)
+void	ft_bzero(void *s, size_t n)
 {
-    close(pipex->tube[0]);
-    close(pipex->tube[1]);
+	char	*string;
+
+	string = (char *)s;
+	while (n--)
+		*string++ = '\0';
 }

@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_paths.c                                        :+:      :+:    :+:   */
+/*   close_pipes.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 00:16:03 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/19 00:49:06 by yamosca-         ###   ########.fr       */
+/*   Created: 2026/01/20 11:25:53 by yamosca-          #+#    #+#             */
+/*   Updated: 2026/01/25 18:11:37 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../pipex.h"
 
-char **get_paths(char **envp)
+void    close_pipes(t_pipex *pipex)
 {
-    int i;
-    char **paths;
-    
-    i = -1;
-    paths = NULL;
-    while (envp[++i])
-    {
-        if (ft_strncmp(envp[i], "PATH=", 5) == 0)
-            paths = ft_split(envp[i] + 5, ':');
-    }
-    return (paths);
+    close(pipex->tube[0]);
+    close(pipex->tube[1]);
 }

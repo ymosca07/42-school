@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parent_free.c                                      :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 11:29:04 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/20 11:35:04 by yamosca-         ###   ########.fr       */
+/*   Created: 2025/10/16 21:42:30 by yamosca-          #+#    #+#             */
+/*   Updated: 2026/01/25 18:24:21 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../pipex.h"
 
-void parent_free(t_pipex *pipex)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-    int i;
+	char	*res;
+	size_t	len;
 
-    i = -1;
-    while (pipex->paths[++i])
-        free(pipex->paths[i]);
-    free(pipex->paths);
+	if (nmemb != 0 && (size >= ((size_t) - 1) / nmemb))
+		return (NULL);
+	len = nmemb * size;
+	res = malloc(len);
+	if (!res)
+		return (NULL);
+	ft_bzero(res, len);
+	return (res);
 }
