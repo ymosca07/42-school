@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 17:19:09 by yamosca-          #+#    #+#             */
-/*   Updated: 2026/01/25 19:00:24 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/01/27 12:19:00 by yamosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,17 @@ static void fork_action(t_pipex *pipex, char **argv, char **envp)
 	if (pipex->pid2 == 0)
 		child_two(pipex, argv, envp);
 }
+
+static void file_descriptor_action(t_pipex *pipex, char **argv)
+{
+	pipex->infile = open(argv[1], O_RDONLY);
+	if (pipex->infile < 0)
+		error_signal("No such file or directory\n");
+	pipex->outfile = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0644);
+	if (pipex->outfile < 0)
+		error_signal("Permission denied\n");
+}
+
 int	main(int argc, char **argv, char **envp)
 {
 	t_pipex	*pipex;
@@ -51,8 +62,7 @@ int	main(int argc, char **argv, char **envp)
 		error_signal("Path vide ou introuvable\n");
 		return (1);
 	}
-	pipex->infile = open(argv[1], O_RDONLY);
-	pipex->outfile = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0644);
+	file_descriptor_action(pipex, argv);
 	fork_action(pipex, argv, envp);
 	end_action(pipex);
 	return (0);

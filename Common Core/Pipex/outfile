@@ -1,1 +1,11 @@
-0
+total 68
+-rw-rw-r-- 1 yamosca- yamosca-    12 janv. 27 11:51 infile
+-rw-rw-r-- 1 yamosca- yamosca-   522 janv. 27 11:51 Makefile
+drwxrwxr-x 4 yamosca- yamosca-  4096 janv. 27 12:27 obj
+-rw-r--r-- 1 yamosca- yamosca-     0 janv. 27 12:27 outfile
+-rwxrwxr-x 1 yamosca- yamosca- 36576 janv. 27 12:27 pipex
+-rw-rw-r-- 1 yamosca- yamosca-  2162 janv. 27 12:19 pipex.c
+-rw-rw-r-- 1 yamosca- yamosca-  1916 janv. 27 11:51 pipex.h
+drwxrwxr-x 5 yamosca- yamosca-  4096 janv. 27 12:26 pipex_tester
+drwxrwxr-x 2 yamosca- yamosca-  4096 janv. 27 11:51 utils_libft
+drwxrwxr-x 2 yamosca- yamosca-  4096 janv. 27 11:51 utils_pipex
