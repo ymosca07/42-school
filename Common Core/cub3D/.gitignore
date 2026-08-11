@@ -1,0 +1,5 @@
+
+# à enlever
+mlx_linux/
+compile_commands.json
+**/*.o
