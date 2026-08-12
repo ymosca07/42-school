@@ -1,15 +1,25 @@
-
 #include "Contact.hpp"
-
-#include <iostream>
-
-void Contact::call() {
-    std::cout << "Mon telephone sonne: " << this->number << std::endl;
-}
+#include "PhoneBook.hpp"
 
 int main() {
-    Contact joseph;
+    PhoneBook carnet;
+    std::string command;
 
-    joseph.call();
-    std::cout << "JE doxx joseph ce grosa noobz: " << joseph.number << std::endl;
+    while (1)
+    {
+        std::cout << "> ";
+        std::getline(std::cin, command);
+        if (std::cin.eof())
+        {
+            std::cout << "Exit \n";
+            break ;
+        }
+        if (command == "EXIT")
+            break ;
+        if (command == "SEARCH")
+            carnet.searchContact();
+        if (command == "ADD")
+            carnet.addContact();
+    }
+    return 0;
 }
