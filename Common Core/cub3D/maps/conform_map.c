@@ -77,12 +77,10 @@ static char	*my_strdup(char *str, int len)
 char **conform_map(char **old)
 {
     int n;
-    int i;
     int len;
     char **new;
 
     n = 0;
-    i = 0;
     len = max_len(old);
     new = ft_calloc(sizeof(char *), map_height(old) + 1);
     if (!new)

@@ -14,14 +14,12 @@
 
 char **fill_data(char *file)
 {
-    int i;
     int fd;
     char *line;
     char *all;
     char **tmp;
 
     all = NULL;
-    i = 0;
     fd = open(file, O_RDONLY);
     if (fd == -1)
         return (NULL);

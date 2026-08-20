@@ -92,6 +92,14 @@ typedef struct s_raycast
 	int			door_raw_start;
 }				t_raycast;
 
+typedef struct s_tex
+{
+	t_img		*img;
+	int			x;
+	double		pos;
+	double		step;
+}				t_tex;
+
 typedef struct s_sprite
 {
 	double		x;

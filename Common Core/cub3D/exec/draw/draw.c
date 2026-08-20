@@ -6,7 +6,7 @@
 /*   By: yamosca- <yamosca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 18:12:11 by flortie           #+#    #+#             */
-/*   Updated: 2026/08/11 18:24:49 by yamosca-         ###   ########.fr       */
+/*   Updated: 2026/08/20 11:31:10 by flortie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,68 +15,92 @@
 void	ft_put_pixel(t_img *img, int x, int y, int color)
 {
 	char	*dst;
-	
+
 	if (x < 0 || x >= WIN_WIDTH || y < 0 || y >= WIN_HEIGHT)
 		return ;
 	dst = img->addr + (y * img->line_len + x * (img->bpp / 8));
 	*(unsigned int *)dst = color;
 }
 
-void	ft_draw_column(t_render *data, int x)
+static t_img	*ft_select_texture(t_render *data, double *wall_x)
 {
-	int y;
-	t_img *current;
-	
-	int tex_x;
-	double tex_pos;
-	double wall_x;
-	double step;
-	int tex_y;
-	int color;
+	t_img	*img;
 
-	y = 0;
 	if (data->ray.side == 0)
 	{
 		if (data->ray.ray_dir_x > 0)
-			current = &data->tex_we;
+			img = &data->tex_ea;
 		else
-			current = &data->tex_ea;
-		wall_x = data->py + (data->ray.perp_wall_dist * data->ray.ray_dir_y);
+			img = &data->tex_we;
+		*wall_x = data->py + data->ray.perp_wall_dist * data->ray.ray_dir_y;
 	}
 	else
 	{
 		if (data->ray.ray_dir_y > 0)
-			current = &data->tex_no;
+			img = &data->tex_so;
 		else
-			current = &data->tex_so;
-		wall_x = data->px + (data->ray.perp_wall_dist * data->ray.ray_dir_x);
+			img = &data->tex_no;
+		*wall_x = data->px + data->ray.perp_wall_dist * data->ray.ray_dir_x;
 	}
-	wall_x -= (int)wall_x;
-	tex_x = wall_x * current->width;
-	if (data->ray.side == 0 && data->ray.ray_dir_x > 0)
-		tex_x = current->width - tex_x - 1;
-	else if (data->ray.side == 1 && data->ray.ray_dir_y < 0)
-		tex_x = current->width - tex_x - 1;
-	step = 1.0 * current->height / data->ray.line_height;
-	tex_pos = step * (data->ray.draw_start - WIN_HEIGHT / 2 + data->ray.line_height / 2);
-	
-	while (y < (WIN_HEIGHT))
+	*wall_x -= floor(*wall_x);
+	return (img);
+}
+
+static void	ft_init_tex(t_render *data, t_tex *tex)
+{
+	double	wall_x;
+
+	tex->img = ft_select_texture(data, &wall_x);
+	tex->x = (int)(wall_x * tex->img->width);
+	if ((data->ray.side == 0 && data->ray.ray_dir_x > 0)
+		|| (data->ray.side == 1 && data->ray.ray_dir_y < 0))
+		tex->x = tex->img->width - tex->x - 1;
+	if (tex->x < 0)
+		tex->x = 0;
+	if (tex->x >= tex->img->width)
+		tex->x = tex->img->width - 1;
+	tex->step = (double)tex->img->height / (double)data->ray.line_height;
+	tex->pos = (data->ray.draw_start - WIN_HEIGHT / 2.0
+			+ data->ray.line_height / 2.0) * tex->step;
+}
+
+static int	ft_tex_color(t_tex *tex)
+{
+	char	*pixel;
+	int		y;
+
+	y = (int)tex->pos;
+	if (y < 0)
+		y = 0;
+	if (y >= tex->img->height)
+		y = tex->img->height - 1;
+	pixel = tex->img->addr + (y * tex->img->line_len
+			+ tex->x * (tex->img->bpp / 8));
+	return (*(unsigned int *)pixel);
+}
+
+void	ft_draw_column(t_render *data, int x)
+{
+	t_tex	tex;
+	int		y;
+	int		color;
+
+	ft_init_tex(data, &tex);
+	y = 0;
+	while (y < WIN_HEIGHT)
 	{
-		if (data->ray.hit_door
-			&& y >= data->ray.door_draw_start
-			&& y <= data->ray.door_draw_end)
-			ft_put_pixel(&data->screen, x, y, 0xFFFFFF);
-		else if (y >= data->ray.draw_start && y <= data->ray.draw_end)
+		color = data->sky_color;
+		if (y > data->ray.draw_end)
+			color = data->floor_color;
+		if (y >= data->ray.draw_start && y <= data->ray.draw_end)
 		{
-			tex_y = (int)tex_pos & (current->height - 1);
-			tex_pos += step;
-			color = *(unsigned int *)(current->addr + (tex_y * current->line_len + tex_x * (current->bpp / 8)));
-			ft_put_pixel(&data->screen, x, y, color);
+			color = ft_tex_color(&tex);
+			tex.pos += tex.step;
 		}
-		else if (y < WIN_HEIGHT / 2)
-			ft_put_pixel(&data->screen, x, y, data->sky_color);
-		else
-			ft_put_pixel(&data->screen, x, y, data->floor_color);
+		if (data->ray.hit_door && y >= data->ray.door_draw_start
+			&& y <= data->ray.door_draw_end)
+			color = 0xFFFFFF;
+		ft_put_pixel(&data->screen, x, y, color);
 		y++;
 	}
 }
